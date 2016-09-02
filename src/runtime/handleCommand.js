@@ -32,7 +32,7 @@ export default async function (state, req, res, next) {
 
     log.info('triggering reef command', { domain, lane, command, payload });
 
-    const receipt = await reef.trigger(domain, lane, command, payload);
+    const receipt = await reef.execute(domain, lane, command, payload);
 
     log.info('reef command executed correctly', { receipt });
 
