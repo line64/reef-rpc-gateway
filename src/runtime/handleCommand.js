@@ -9,8 +9,7 @@ function parseRequest(req) {
 
   if (!subject) throw new Error('Command subject missing from params');
 
-  let command = "POST_"
-    .concat(subject)
+  let command = subject
     .replace('-', '_')
     .toUpperCase();
 
@@ -27,8 +26,7 @@ export default async function (state, req, res, next) {
   //TODO: create child bunyan
   log.info('start processing command');
 
-  let { params: { domain, lane, subject } } = req;
-  let command = `POST_${subject}`;
+  let { domain, lane, command, payload } = parseRequest(req);
 
   try {
 

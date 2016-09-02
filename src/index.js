@@ -6,7 +6,7 @@ import { startGatewayAsync } from './runtime';
 
 async function start() {
 
-  dotenv.load();
+  dotenv.load({ silent: true });
 
   const config = {
     LOG_LEVEL: process.env.LOG_LEVEL || 'info',
