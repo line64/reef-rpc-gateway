@@ -23,7 +23,6 @@ export default async function (state, req, res, next) {
 
   let log = bunyan.child({ reqId: req.id });
 
-  //TODO: create child bunyan
   log.info('start processing command');
 
   let { domain, lane, command, payload } = parseRequest(req);
