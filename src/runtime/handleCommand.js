@@ -10,7 +10,7 @@ function parseRequest(req) {
   if (!subject) throw new Error('Command subject missing from params');
 
   let command = subject
-    .replace('-', '_')
+    .replace(/-/g, '_')
     .toUpperCase();
 
   return { domain, lane, command, payload: body };

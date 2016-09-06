@@ -10,7 +10,7 @@ function parseRequest(req) {
   if (!subject) throw new Error('Query subject missing from params');
 
   let queryKey = subject
-    .replace('-', '_')
+    .replace(/-/g, '_')
     .toUpperCase();
 
   return { domain, lane, query: queryKey, payload: query };
