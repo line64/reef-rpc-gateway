@@ -17,6 +17,8 @@ export default function (config, bunyan) {
   server.use(queryParser());
   server.use(bodyParser());
 
+  CORS.ALLOW_HEADERS.push('authorization');
+
   server.pre(CORS({
   	origins: ['*'],
   	credentials: true,
