@@ -13,7 +13,12 @@ function parseRequest(req) {
     .replace(/-/g, '_')
     .toUpperCase();
 
-  return { domain, lane, query: queryKey, payload: query };
+  let payload = {
+    ...query,
+    bearer: req.user
+  };
+
+  return { domain, lane, query: queryKey, payload };
 
 }
 
