@@ -13,7 +13,12 @@ function parseRequest(req) {
     .replace(/-/g, '_')
     .toUpperCase();
 
-  return { domain, lane, command, payload: body };
+  let payload = {
+    ...body,
+    bearer: req.user
+  };
+
+  return { domain, lane, command, payload };
 
 }
 
