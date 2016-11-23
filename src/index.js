@@ -14,7 +14,7 @@ async function start() {
     AWS_REGION: process.env.AWS_REGION,
     AWS_ACCESSKEYID: process.env.AWS_ACCESSKEYID,
     AWS_SECRETACCESSKEY: process.env.AWS_SECRETACCESSKEY,
-    REEF_CLIENT_LANE: process.env.REEF_CLIENT_LANE,
+    REEF_CLIENT_LANE: process.env.REEF_CLIENT_LANE || process.env.HOSTNAME,
     RESTIFY_PORT: process.env.RESTIFY_PORT,
     JWT_SECRET: process.env.JWT_SECRET
   };

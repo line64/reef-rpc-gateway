@@ -4,6 +4,8 @@ export default async function (config, bunyan) {
 
 	try {
 
+		bunyan.info('setting up sqs broker', config);
+
 		let brokerFacade = new SqsBrokerFacade({
 			region: config.region,
 			accessKeyId: config.accessKeyId,
